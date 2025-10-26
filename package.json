@@ -1,7 +1,7 @@
 {
   "name": "actions/attest-build-provenance",
   "description": "Generate signed build provenance attestations",
-  "version": "1.1.5",
+  "version": "2.0.0",
   "author": "",
   "private": true,
   "homepage": "https://github.com/actions/attest-build-provenance",
@@ -21,15 +21,15 @@
     ".": "./dist/index.js"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "bundle": "npm run format:write && npm run package",
     "ci-test": "jest",
     "format:write": "prettier --write **/*.ts",
     "format:check": "prettier --check **/*.ts",
-    "lint:eslint": "npx eslint . -c ./.github/linters/eslint.config.mjs",
-    "lint:markdown": "npx markdownlint --config .github/linters/.markdown-lint.yml \"*.md\"",
+    "lint:eslint": "npx eslint",
+    "lint:markdown": "npx markdownlint --config .markdown-lint.yml \"*.md\"",
     "lint": "npm run lint:eslint && npm run lint:markdown",
     "package": "ncc build src/index.ts --license licenses.txt",
     "package:watch": "npm run package -- --watch",
@@ -74,20 +74,20 @@
     "@actions/core": "^1.11.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.30.0",
+    "@eslint/js": "^9.33.0",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.0.7",
+    "@types/node": "^24.2.1",
     "@vercel/ncc": "^0.38.3",
-    "eslint": "^9.30.0",
+    "eslint": "^9.33.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jest": "^29.0.1",
-    "jest": "^30.0.3",
+    "jest": "^30.0.5",
     "jose": "^5.9.6",
     "markdownlint-cli": "^0.45.0",
-    "nock": "^14.0.5",
+    "nock": "^14.0.9",
     "prettier": "^3.6.2",
-    "ts-jest": "^29.4.0",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.35.0"
+    "ts-jest": "^29.4.1",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.0"
   }
 }
